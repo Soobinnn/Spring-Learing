@@ -16,4 +16,13 @@ public class Calculator {
 
         return minus(x - 1,y - 1);
     }
+
+    public int multiply(int x, int y) {
+        int result = 0;
+        for (int i = 0; i < y; i++){
+            result += x;
+        }
+
+        return result;
+    }
 }

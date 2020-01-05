@@ -33,4 +33,10 @@ public class CaculatorTest {
         Calculator calculator = new Calculator();
         assertThat(calculator.minus(5, 3), is(2));
     }
+
+    @Test
+    public void multiply() {
+        Calculator calculator = new Calculator();
+        assertThat(calculator.multiply(2,3), is(6));
+    }
 }
