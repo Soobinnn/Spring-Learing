@@ -37,11 +37,13 @@ public class CaculatorTest {
     @Test
     public void plus() {
         assertThat(calculator.plus(2, 3), is(5));
+        assertThat(calculator.plus(2, -3), is(-1));
     }
 
     @Test
     public void minus() {
         assertThat(calculator.minus(5, 3), is(2));
+        assertThat(calculator.minus(5, -3), is(8));
     }
 
     @Test
@@ -66,4 +68,5 @@ public class CaculatorTest {
         assertThat(calculator.fib(-1), is( 0));
         assertThat(calculator.fib(-100), is( 0));
     }
+
 }

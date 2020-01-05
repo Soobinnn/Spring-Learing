@@ -4,6 +4,10 @@ import java.util.stream.IntStream;
 
 public class Calculator {
     public int plus(int x, int y) {
+        if(y<0) {
+            return minus(x, -y);
+        }
+
         if(y == 0) {
             return x;
         }
@@ -12,6 +16,9 @@ public class Calculator {
     }
 
     public int minus(int x, int y) {
+        if(y<0) {
+            return plus(x, -y);
+        }
         if(y == 0) {
             return x;
         }
