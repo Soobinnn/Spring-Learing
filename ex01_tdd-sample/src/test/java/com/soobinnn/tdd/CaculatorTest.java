@@ -19,6 +19,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+import java.util.stream.IntStream;
+
 import static org.hamcrest.CoreMatchers.is;
 //import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertThat;
@@ -49,16 +51,19 @@ public class CaculatorTest {
 
     @Test
     public void fibonacciNormal() {
-        assertThat(calculator.fib(0), is( 0));
-        assertThat(calculator.fib(1),is(1));
-        assertThat(calculator.fib(1),is(1));
-        assertThat(calculator.fib(3),is(2));
-        assertThat(calculator.fib(4),is(3));
-        assertThat(calculator.fib(5),is(5));
+        int[] numbers = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
+
+        IntStream.range(0, numbers.length).forEach(i -> {
+            assertThat(calculator.fib(i), is(numbers[i]));
+        });
+//        for(int i =0; i < numbers.length; i++) {
+//            assertThat(calculator.fib(i), is(numbers[i]));
+//        }
     }
 
     @Test
     public void fibonacciError() {
         assertThat(calculator.fib(-1), is( 0));
+        assertThat(calculator.fib(-100), is( 0));
     }
 }
