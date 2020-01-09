@@ -93,3 +93,13 @@ __dependency__
 2. Green - Success
 3. Refactoring
 
+
+## Rest API (REpresentational State Transfer)
+
+-
+URI (Uniform Resource Identifier)
+URL (Uniform Resource Location)
+
+Collection : Read, Create
+Member : Read(Detail), update, delete
+
