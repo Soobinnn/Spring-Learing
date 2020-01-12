@@ -60,7 +60,7 @@ Presentation - Business - Data Source
 Layered Architecture 
 - UI Layer (Controller)
 - Application Layer
-- Domain Layer
+- Domain Layer (Repository)
 - Infrastructure Layer
 
 ## 기술 스택

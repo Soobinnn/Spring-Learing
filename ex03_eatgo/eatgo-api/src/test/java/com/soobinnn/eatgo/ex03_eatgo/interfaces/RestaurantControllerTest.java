@@ -1,9 +1,7 @@
 package com.soobinnn.eatgo.ex03_eatgo.interfaces;
 
 
-import com.soobinnn.eatgo.ex03_eatgo.domain.Restaurant;
-import com.soobinnn.eatgo.ex03_eatgo.domain.RestaurantRepository;
-import com.soobinnn.eatgo.ex03_eatgo.domain.RestaurantRepositoryImpl;
+import com.soobinnn.eatgo.ex03_eatgo.domain.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +25,9 @@ public class RestaurantControllerTest {
     @SpyBean(RestaurantRepositoryImpl.class)
     private RestaurantRepository restaurantRepository;
 
+    @SpyBean(MenuItemRepositoryImpl.class)
+    private MenuItemRepository menuItemRepository;
+
     //perform은 예외가 나올 수 있으니 Exception을 해야함.
     @Test
     public void list() throws Exception {
@@ -49,6 +50,9 @@ public class RestaurantControllerTest {
                 ))
                 .andExpect(content().string(
                         containsString("\"name\":\"Bob zip\"")
+                ))
+                .andExpect(content().string(
+                        containsString("Kimchi")
                 ));
 
         mvc.perform(get("/restaurants/2020"))
