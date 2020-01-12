@@ -103,3 +103,19 @@ URL (Uniform Resource Location)
 Collection : Read, Create
 Member : Read(Detail), update, delete
 
+
+## 의존성 (Dependency)
+A는 B를 사용 -> A는 B에 의존
+
+B의 변화가 A에 영향
+
+ex) Controller는 Repository에 의존
+1. Repository 생성
+2. Controller에 Repository를 연결
+
+### Spirng IoC Container
+의존관계를 자동으로 연결해줌
+- @Component
+- @Autowired
+
+\* 의존관계를 사용할 때는 Test Case에 __@SpyBean__ 을 추가해줘야함 
