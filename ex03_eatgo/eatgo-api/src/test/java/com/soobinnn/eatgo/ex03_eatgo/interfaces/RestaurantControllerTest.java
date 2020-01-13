@@ -1,6 +1,7 @@
 package com.soobinnn.eatgo.ex03_eatgo.interfaces;
 
 
+import com.soobinnn.eatgo.ex03_eatgo.application.RestaurantService;
 import com.soobinnn.eatgo.ex03_eatgo.domain.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,6 +28,9 @@ public class RestaurantControllerTest {
 
     @SpyBean(MenuItemRepositoryImpl.class)
     private MenuItemRepository menuItemRepository;
+
+    @SpyBean(RestaurantService.class)
+    private RestaurantService restaurantService;
 
     //perform은 예외가 나올 수 있으니 Exception을 해야함.
     @Test
